@@ -24,9 +24,10 @@
   <script>
     "use strict";
 
-    const tempC = prompt("Введите значение температуры\nв градусах Цельсия");
+    const tempC = +prompt("Введите значение температуры\nв градусах Цельсия");
     const tempF = (9 / 5) * tempC + 32;
-    alert(`Цельсий: ${tempC}, Фаренгейт: ${tempF}`);
+    const roundedTempF = Math.round(tempF * 10) / 10;
+    alert(`Цельсий: ${tempC}, Фаренгейт: ${roundedTempF}`);
   </script>
 </body>
 
