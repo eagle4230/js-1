@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+  <script>
+    "use strict";
+
+    /**
+    * Функия реализует арифметическую операцию, переданную в третий параметр
+    * функции, используя для этого функции расчета значений. В качестве 
+    * первых двух параметров принимаются операнды, с которыми необходимо
+    * произвести указанную операцию.
+    * @param {number} arg1 - первое число
+    * @param {number} arg2 - второе число
+    * @param {string} operation - арифмитическая операция: "+", "-", "*", "/"
+    * @return {number} Результат операции operation над первыми двумя аргументами
+    * функции. Вернет NaN, если operation или первые два аргумента заданы
+    * неверно.
+    */
+    function mathOperation(arg1, arg2, operation) {
+      switch (operation) {
+        case "+": return sum(arg1, arg2);
+        case "-": return diff(arg1, arg2);
+        case "*": return multi(arg1, arg2);
+        case "/": return divi(arg1, arg2);
+        default: return NaN;
+      }
+    }
+
+    /**
+    * Функция подсчета суммы двух чисел
+    * @param {number} a - первое число
+    * @param {number} b - второе число
+    * @return {number} результат сложения двух чисел
+    */
+    function sum(a, b) {
+      return a + b;
+    }
+
+    /**
+    * Функция подсчета разницы двух чисел
+    * @param {number} a - первое число
+    * @param {number} b - второе число
+    * @return {number} результат вычитания двух чисел
+    */
+    function diff(a, b) {
+      return Math.abs(a - b);
+    }
+
+    /**
+    * Функция подсчета произведения двух чисел
+    * @param {number} a - первое число
+    * @param {number} b - второе число
+    * @return {number} результат умножения двух чисел
+    */
+    function multi(a, b) {
+      return a * b;
+    }
+
+    /**
+    * Функция подсчета деления двух чисел
+    * @param {number} a - первое число
+    * @param {number} b - второе число
+    * @return {number} результат деления двух чисел
+    */
+    function divi(a, b) {
+      return a / b;
+    }
+
+    const arg1 = 2;
+    const arg2 = 4;
+    const operation = "=)";
+
+    console.log(mathOperation(arg1, arg2, operation));
+  </script>
+</body>
+
+</html>
