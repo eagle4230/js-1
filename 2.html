@@ -68,9 +68,10 @@
     должно моментально отображаться в span. То есть при печати в input'е тег span
     также должен меняться.
     */
+    const textPanel = document.querySelector('span');
     document.querySelector('#from').addEventListener('input', event => {
-      document.querySelector('span').textContent = event.target.value;
-    })
+      textPanel.textContent = event.target.value;
+    });
 
     /*
     2. При клике на кнопку с классом messageBtn необходимо элементу с классом
@@ -79,7 +80,7 @@
     2) поставить данному элементу стиль visibility в значение 'visible'.
     */
     const messageEl = document.querySelector('.message');
-    document.querySelector('.messageBtn').addEventListener('click', event => {
+    document.querySelector('.messageBtn').addEventListener('click', () => {
       messageEl.classList.add('animate__animated', 'animate__fadeInLeftBig');
       messageEl.style.visibility = 'visible';
     });
