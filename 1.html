@@ -64,16 +64,14 @@
     };
     const textPanel = document.querySelector('.text');
 
-    document.querySelector('.nav-tabs').addEventListener('click', el => {
-      if (!el.target.classList.contains('nav-link')) {
+    document.querySelector('.nav-tabs').addEventListener('click', event => {
+      if (!event.target.classList.contains('nav-link')) {
         return;
       }
       document.querySelector('.active').classList.remove('active');
-      el.target.classList.add('active');
+      event.target.classList.add('active');
 
-      const textProperty = event.target.parentElement.dataset.text;
-      const text = panelText[textProperty];
-      textPanel.textContent = text;
+      textPanel.textContent = panelText[event.target.parentElement.dataset.text];
     });
 
     /*
